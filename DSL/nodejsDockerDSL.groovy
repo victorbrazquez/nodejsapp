@@ -1,9 +1,9 @@
 job('Aplicacion Node.js Docker DSL') {
     description('Aplicación Node JS Docker DSL para el curso de Jenkins')
     scm {
-        git('https://github.com/macloujulian/nodejsapp.git', 'master') { node ->
-            node / gitConfigName('macloujulian')
-            node / gitConfigEmail('macloujulian@gmail.com')
+        git('https://github.com/victorbrazquez/nodejsapp.git', 'master') { node ->
+            node / gitConfigName('victorbrazquez')
+            node / gitConfigEmail('vmbv21@gmail.com')
         }
     }
     triggers {
@@ -14,9 +14,9 @@ job('Aplicacion Node.js Docker DSL') {
     }
     steps {
         dockerBuildAndPublish {
-            repositoryName('macloujulian/nodejsapp')
+            repositoryName('victorbrazquez/nodejsapp')
             tag('${GIT_REVISION,length=7}')
-            registryCredentials('docker-hub')
+            registryCredentials('93ef0321-63e2-4257-84f1-1ee142cb9f91')
             forcePull(false)
             createFingerprints(false)
             skipDecorate()
